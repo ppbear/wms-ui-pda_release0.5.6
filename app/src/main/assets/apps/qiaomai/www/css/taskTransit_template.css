@@ -1,0 +1,92 @@
+#header{
+	height: 96px;
+}
+#header .top{
+	height: 48px;
+	border-bottom: 1px solid #D5D5D5;
+}
+#header ul li{
+	height: 48px;
+	line-height: 48px;
+	width: 50%;
+	text-align: center;
+	font-size: 0.80rem;
+}
+#header ul.nav li.active{
+	color: #0013E7;
+	border-bottom: 2px solid #0013E7;
+}
+#header ul li:first-child{
+	border-right: 1px solid #D5D5D5;
+}
+#content{
+	padding:96px 0rem 0px 0rem;
+	overflow: scroll;
+}
+#content .pickedList{
+	display: none;
+}
+#content .list li{
+	padding: 10px;
+	background-size: 40px;
+	background: #F9f9f9;
+	margin-bottom: 8px;
+	position: relative;
+	font-size: 0.80rem;
+}
+#content .list li .button{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -16px;
+}
+#content .list li div{
+	height: 1.3rem;
+	line-height: 1.3rem;
+}
+#content .list li div span.rightContent{
+	color: #9E9E9E;
+}
+/*领取任务*/
+.pickTitle{
+	padding:1px 10px;
+	overflow: hidden;
+	height: 2.4rem;
+}
+.pickTitle div.l{
+	width: 70%;
+	line-height:1.2rem;
+	height: 2.4rem;
+}
+.pickTitle div.l span{
+	position: relative;
+	left: 0;
+	top: 10px;
+	text-align: left;
+}
+.pickTitle div.r{
+	height: 2.4rem;
+	width: 30%;
+	line-height:1.2rem;
+}
+.pickTitle button{
+	line-height: 1;
+	margin-top: 9px;
+	background: #C2C2C2;
+	color: #FFFFFF;
+}
+.pickTitle button.active{
+	background: #FC6E51;
+}
+#content .receievepick li .button{
+	position: initial;
+	margin-top: 0px;
+}
+#content .receievepick li button.return{
+	margin-right: 15px;
+	border: 1px solid red;
+	color: red;
+}
+#content .receievepick li span.continueRe{
+	display: none;
+}

@@ -1,0 +1,51 @@
+{
+  "index.html": {
+    "resources": [
+      "css/common.css",
+      "js/update.js",
+      "js/shortcut.js",
+      "js/immersed.js"
+    ],
+    "refer": [
+      "plus/audio.html",
+      "plus/storage.html",
+      "plus/downloader.html",
+      "plus/nativeui.html",
+      "plus/camera.html"
+    ]
+  },
+  "plus/storage.html": {
+    "resources": [
+      "js/common.js"
+    ]
+  },
+  "plus/audio.html": {
+    "resources": [
+      "img/astop.png",
+      "js/common.js",
+      "css/common.css",
+      "js/immersed.js"
+    ]
+  },
+  "plus/downloader.html": {
+    "resources": [
+      "js/common.js",
+      "css/common.css",
+      "js/immersed.js"
+    ]
+  },
+  "plus/nativeui.html": {
+    "resources": [
+      "js/common.js",
+      "css/common.css",
+      "js/immersed.js"
+    ]
+  },
+  "plus/camera.html": {
+    "resources": [
+      "js/common.js",
+      "css/common.css",
+      "js/immersed.js"
+    ]
+  }
+}

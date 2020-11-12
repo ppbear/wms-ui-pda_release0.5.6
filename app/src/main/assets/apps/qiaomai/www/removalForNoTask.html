@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_com_inquire">按单出库</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		body, html{
+			background: #efeff4;
+		}
+		#content .list li{
+			background: #FFFFFF;
+		}
+		#content .list li div{
+			height: 0.rem;
+		}
+		/*#content .list li div{
+			height: 1px;
+		}*/
+		#header{
+			height: 48px;
+			line-height: 48px;
+		}
+		#content{
+			position: absolute;
+			top: 48px;
+			bottom:0rem;
+			width: 100%;
+			padding-top:0 ;
+			overflow: initial;
+		}
+		#header .mui-input-row{
+			height: 48px;
+			position: absolute;
+			left: 38px;
+			top: -2px;
+			width: 74%;
+		}
+		#header .mui-input-row input{
+			padding: 0 10px;
+			margin-bottom: 0;
+			height: 40px;
+			width: 100%;
+		}
+		.mui-input-row .mui-input-clear~.mui-icon-clear{
+			top: 12px;
+			font-size: 26px;
+		}
+		.goodsInfoList .goodsName{
+			width: 90%;
+		}
+		.goodsUnit{
+			margin-right: 6px;
+			margin-left: 14px;
+		}
+		.title{
+			border-bottom: 1px solid #ccc;
+		}
+		.null{
+			border: none;
+		}
+		#content .list li.emptyLocation{
+			position: relative;
+			padding: 0px;
+			height: 3rem;
+			background: #efeff4;
+			margin-bottom: 0px;
+			border: none;
+		}
+		#content .list li.emptyLocation div{
+			height: 3rem;
+			padding: 10px;
+			margin-top: 10px;
+			background: #FFFFFF;
+		}
+		#content .list li.emptyLocation img{
+			position: absolute;
+			top: 5px;
+			right: 0;
+		}
+		#loading{
+			z-index: 99;
+		}
+		#refreshContainer{
+			height: calc(100vh - 50px);
+			bottom: 48px;
+		}
+		#header div.searchBtn{
+			width: 40px;
+			height: 100%;
+			background: url(img/search.png) no-repeat center;
+			background-size: 20px;
+		}
+		#content #goodsList span.rightContent, #content #goodsList span.goodsUnit{
+			color: #3e3e3e;
+		} 
+		#content span.leftTitle, #content span.unit{
+			color: #9E9E9E;
+		}
+		#content span.goodsName{
+			color: #3e3e3e;
+			font-weight: 600;
+		}
+		#content .list li{
+			margin-bottom: 7px;
+			margin-top: 7px;
+		}
+		#content .list li.emptyLocation{
+			margin-bottom: 10px;
+		}
+		#content .list li.emptyLocation div{
+	     	margin-top: 0px; 
+		}
+		.mui-table-view-cell:after {
+		    left: 0px;
+		    width: 100%;
+		 }
+		 #header .mui-icon-back, #header .searchBtn{
+		 	height: 48px;
+		 	width: 13%;
+		 	text-align: center;
+		 	line-height: 48px;
+		 	margin: 0;
+		 	padding: 0;
+		 }
+		 .hint{
+		 	height: 40px;
+		 	width: 100%;
+		 	background: #FFFFFF;
+		 	font-size: 13px;
+		 	text-align: center;
+		 	border-bottom: 1px solid #ccc;
+		 	padding-top: 9px;
+		 	color: #ccc;
+		 }
+		 #refreshContainer {
+		    top: 40px;
+		}
+		.connect{
+			border: 1px solid #0013E7;
+			font-size: 14px;
+		    border-radius: 5px;
+		    width: 54px;
+		    text-align: center;
+		    color: #0013E7;
+		    height: 26px;
+		}
+		.goodsInfoList{
+			border-bottom: 1px solid #ccc;
+		}
+		.mui-scroll {
+		    width: 106%;
+		    margin-left: -10px;
+		}
+		.noData {
+		    background: url(./img/noOrder.png) no-repeat center 8rem;
+		}
+		.t1{
+			height: 21px;
+		    font-size: 15px;
+		    margin-top: 10px;
+		}
+		.t2{
+			font-size: 15px;
+		}
+		.min{
+			font-size: 14px;
+			color: #CCCCCC;
+		}
+		.blank{
+			height: 10px;
+		}
+		#content .list li div {
+		    height: none; 
+		}
+		#content .list li div {
+		    height: -1px; 
+		    line-height: -1px; 
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<div class="mui-icon mui-icon-back backdiv mui-action-back l"></div>
+			<div class="mui-input-row l">
+				<input type="text"  class="mui-input-clear password checkbox searchName" value="" placeholder="扫描/输入订单单号">
+			</div>
+			<!--<div class="searchBtn r">-->
+				<!--<img class="" src="img/search.png"/>-->
+			<!--</div>-->
+		</div>
+	</div>
+	<div class="noData">
+		<p class="i18n t1" message="i18n_removal_search_no_data_hint_1"></p>
+		<p class="i18n t2" message="i18n_removal_search_no_data_hint_2"></p>
+	</div>
+	<div id="content">
+		<div class='i18n hint' message="i18n_removal_for_no_wave_task_search_hint"></div>
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="goodsList list mui-table-view-chevron" id="goodsList">
+				</ul>
+			</div>	
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/qm.dateTimeUtil.js"></script>
+	<script type="text/javascript" src="js/removalForNoTask.js"></script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n title" message="i18n_putaway">上架</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskIndex_template.css"/>
+	<style type="text/css">
+		#content{
+			position: absolute;
+			top: 0;
+			bottom:0rem;
+			overflow: initial;
+			padding:48px 0 0 0 ;
+		}
+		#refreshContainer{
+			top: 48px;
+			height: calc(100vh - 50px);
+		}
+		.myBtn{
+			border: 1px solid #0013E7;
+		    height: 23px;
+		    width: 62px;
+		    text-align: center;
+		    line-height: 23px;
+		    color: #0013E7;
+		    border-radius: 5px;
+		    font-size: 14px;
+		}
+		.noActive{
+			color: #737373;
+			border: 1px solid #737373;
+			height: 23px;
+		    width: 62px;
+		    text-align: center;
+		    line-height: 23px;
+		    border-radius: 5px;
+		    font-size: 14px;
+		}
+		.min{
+			height: 23px;
+		    width: 62px;
+		    text-align: center;
+		    font-size: 14px;
+		}
+		.min1{
+			font-size: 13px;
+		}
+		.min2{
+			font-size: 13px;
+			color: #111;
+		}
+		.min3{
+			color: #111;
+		}
+		.blankDiv{
+			background: #F9f9f9;
+			margin-bottom: 0px;
+			height: 0.25rem;
+		}
+		#content .orderList li {
+		    border-bottom: 0px solid #ccc; 
+		}
+		#content ul {
+		    padding: 0px 0px;
+		}
+		#content li div {
+		    padding-left: 11px;
+		    padding-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<!--<span class="i18n title" message="i18n_putaway"></span>-->
+		<div class="mui-input-row searchInput">
+			<input type="text" class="mui-input-clear searchName l clearfloat i18n-input" message="i18n_harvest_scan_or_enter_a_order_barcode">
+		</div>
+	</div>
+	<div class="noData">
+		<span class="i18n" message="i18n_removal_has_not_orders"></span>
+	</div>
+	<div id="content">
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="orderList list mui-table-view-chevron" id="goodsList">
+				</ul>
+			</div>	
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/putaway.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

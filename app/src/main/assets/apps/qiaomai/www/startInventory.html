@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_index_inventory">盘点</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.picker.min.css"/>
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .goodsInfo{
+			border-bottom: 1px solid #D5D5D5;
+		}   
+		#content .goodsInfo div{
+			height: 24px;
+			line-height: 24px;
+			width: 100%;
+			padding:0 14px;
+		}
+		.footerBtn{
+			margin-top: 0;
+			height: 3rem;
+		}
+		.footerBtn .button{
+			margin-top:0.4rem ;
+		}
+		#content ul.headerNav  li div.inventoryed{
+			color: #06da33;
+		}
+		#content .inputBox .location{
+			width: 54%;
+		}
+		#content .inputBox #locationImg{
+			margin-left: 3px;
+		}
+		#content .inputBox .location input{
+			width: 70%;
+			margin-left: 0;
+		}
+		#content .inputBox .location span.inventoryType{
+			display: inline-block;
+			border-radius: 3px;
+			width: calc(30% - 10px);
+			height: 40px;
+			border: 1px solid #CCCCCC;
+			border-right: none;
+			margin-left: 10px;
+			text-align: center;
+		}
+		#content .inputBox .location #location{
+			padding: 10px 5px;
+		}
+		#content .inputBox .location span.unfinish{
+			color: #FF7373;
+		}
+		#content .inputBox .location span.finish{
+			color: #06da33;
+		}
+		#content .inputBox .location span.add{
+			color: #73C5FF;
+		}
+		#content .inputBox #goodsUnit{
+			width: 100%;
+		    margin-left: 0px;
+		    text-indent: 0;
+		    height: 40px;
+		    margin-top: 0px;
+		    font-size: 18px!important;
+    		padding: 6px 12px;
+		}
+		#content .inputBox .barcode input.active, #content .inputBox .goodsName select.active{
+			border: 1px solid red !important;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="i18n title" message="i18n_index_inventory"></span>
+	</div>
+	<div id="content">
+		<div class="goodsInfo">
+			<div class="goodsBarcode"></div>
+			<div class="omit name goodsName"></div>
+		</div>
+		<ul class="headerNav">
+			<li class="l">
+				<div>
+					<span class="waitReceive"></span><span class="i18n" message="i18n_com_one"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_inventory_waiting_plate_position"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div class="inventoryed">
+					<span class="receivePartCount"></span><span class="i18n" message="i18n_com_one"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_inventory_has_a_disk_location"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div class="receivedKind">
+					<span class="completeReceive"></span><span class="i18n" message="i18n_com_one"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_inventory_add_location"></span>
+				</div>
+			</li>
+		</ul>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_inventory_location"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row location l">
+				<span class="inventoryType l"></span>
+				<input type="text" class="clearfloat input inputText i18n-input" id="location" maxlength="15"  message="i18n_task_please_scan_location_code">
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg" id="locationImg" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_harvest_goods_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row barcode l">
+				 <input type="text" class="clearfloat input inputText i18n-input" readonly="readonly" id ="barcode" message="i18n_harvest_please_scan_the_container_number">
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg" id="barcodeImg" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_harvest_goods_name"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row goodsName l">
+				<!-- <input type="text" readonly="readonly" class="clearfloat i18n-input readonly" message="i18n_harvest_please_scan_the_container_number">-->
+				<select id ="goodsName" class="select input" ></select>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_harvest_date_in_produced"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row l mui-content produced">
+				<div id='result' class="ui-alert input"></div>
+				<button id='produced'  class="btn mui-btn mui-btn-block i18n"></button>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_inventory_has_a_disk_num"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row receiveCount l">
+				 <input type="tel" disabled readonly maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]+/,'');" id="haveReciveCount" class="clearfloat i18n-input readonly">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_inventory_num"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row mui-content receiveNum l">
+				<input id="inventoryNum" type="tel" maxlength="6"  class="mui-input-clear clearfloat i18n-input">
+			</div>
+			<div class="l inputBoxUnit">
+				<select id ="goodsUnit" class="select" ></select>
+				<!--<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />-->
+			</div>
+		</div>
+		<ul class="footerBtn">
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block confirm" message="i18n_harvest_confirm"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block next" message="i18n_harvest_next"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block end" message="i18n_harvest_end"></button>
+			</li>
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="mui/js/mui.picker.min.js" ></script>
+	<script type="text/javascript" src="js/startInventory.js" ></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

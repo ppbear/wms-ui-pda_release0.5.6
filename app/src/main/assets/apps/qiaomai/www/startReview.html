@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_review_in_progress">复核中</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .headerNav li{
+			width: 50%;
+			overflow: hidden;
+			border-bottom: 1px solid #D5D5D5 !important;
+			height: 48px;
+		}
+		#content .inputBox{
+			margin-top: 10px;
+		}
+		#content .headerNav li:first-child{
+			border-bottom: none;
+		}
+		#content .headerNav li span.orderNum, #content .headerNav li div:first-child{
+			color: #3C3C3C;
+		}
+		#content .headerNav li .pickeKind{
+			color: #FF7373;
+		}
+		#content .headerNav li.picking div{
+			width: 100%;
+			height: 24px;
+			line-height: 24px;
+			text-align: center;
+		}
+		#content .footerLiBtn{
+			margin-top: 2rem;
+		}
+		.footerBtn li button{
+			width: 90%;
+		}
+		#modelToast{
+			position: absolute;
+			display: none;
+			height: 40px;
+			line-height: 40px;
+			width: 140px;
+			left: 50%;
+			top: 50%;
+			font-size: 16px;
+			margin-left: -70px;
+			margin-top: -20px;
+			border-radius: 5px;
+			background: #FFFFFF;
+		}
+		#modelToast img{
+			height: 24px;
+			margin-top: 8px;
+			margin-left: 8px;
+		}
+		#modelToast span{
+			margin-left: 4px;
+		}
+		#returnModel .modelContent .select{
+			padding: 0;
+			font-size: 0.66rem !important;
+		}
+		.headerNav li.active{
+			background: #CCCCCC;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="i18n title" message="i18n_review_in_progress"></span>
+		<span class="orderNum"></span>
+	</div>
+	<div id="content">
+		<ul class="headerNav">
+			<li class="picking l">
+				<div class="l"> 
+					<p>
+						<span class="pickeKind harvestNum awaitCheckNum"></span>
+						<span class="pickeKind i18n" message="i18n_com_kind"></span>
+					</p>
+					<p>
+						<span class="i18n" message="i18n_review_wait_for_review"></span>
+					</p>
+				</div>
+			<li class="picking l">	
+				<div class="r">
+					<p>
+						<span class="receivedKind harvestNum isCheckedNum"></span>
+						<span class="receivedKind i18n" message="i18n_com_kind"></span>
+					</p>
+					<p>
+						<span class="i18n" message="i18n_reviewed"></span>
+					</p>
+				</div>
+			</li>
+		</ul>
+		<div class="harvestInfo">
+			<div class="i18n noInfo gray"></div>
+			<ul class="forReceiveDetails"></ul>
+			<ul class="receivePartDetails"></ul>
+		</div>
+		<div class="contentInfo">
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_goods_code"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row barcode l">
+					 <input type="text" class="clearfloat i18n-input" maxlength="15" message="i18n_review_please_commodity_bar_code">
+				</div>
+				<div class="l inputBoxUnit">
+					<img class="testImg" src="img/tip.png"/>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_goods_name"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row goodsName l">
+					 <select class="select goodList">
+					 	<option class="i18n" value="" message="i18n_com_please_select_the_product"></option>
+					 </select>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_com_standard">规格</span>
+				</div>
+				<div class="inputBoxContent mui-input-row standard l">
+					 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_index_purchase"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row purchaseCount l">
+					 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly" message="i18n_review_after_the_review_is_correct">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_index_review"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row  reviewCount l">
+					 <input type="tel" class="mui-input-clear clearfloat i18n-input">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<ul class="footerBtn footerLiBtn">
+				<li class="l twoLines">
+					  <button type="button" class="i18n button mui-btn mui-btn-block confirm confirmBtn" message="i18n_harvest_confirm"></button>
+				</li>
+				<li class="l twoLines">
+					  <button type="button" class="i18n button mui-btn mui-btn-block next nextBtn" message="i18n_harvest_next"></button>
+					  
+				</li>
+				<li class="l twoLines">
+					  <button type="button" class="button mui-btn mui-btn-block returnOrRep">
+					  	<span class="i18n" message="i18n_review_return_goods"></span>/
+					  	<span class="i18n" message="i18n_review_replenishment"></span>
+					  	<em class="abnormalReview">(<span></span>)</em>
+					  </button>
+				</li>
+				<li class="l twoLines">
+					  <button type="button" class="i18n button mui-btn mui-btn-block end" message="i18n_harvest_end"></button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="returnModel" class="popupModel">
+		<div class="modelContent">
+			<div class="modelTitle i18n" message="i18n_review_return_num"></div>
+			<div class="modelInfo">
+				<span class="i18n l" message="i18n_harvest_goods_name"></span>
+				<select name="" class="select pickWrongGoods r">
+				</select>
+			</div>
+			<div class="pickDate modelInfo">
+				<span class="i18n l" message="i18n_harvest_date_in_produced"></span>
+				<select name="" class="select goodsDate r">
+				</select>
+			</div>
+			<div class="modelInfo">
+				<span class="i18n l" message="i18n_com_num"></span>
+				<input type="tel" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]+/,'');" class="mui-input-clear goodsNum  returnNum clearfloat i18n-input l">
+				<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly pickUnit unit r" message="i18n_harvest_goods_unit"  />
+			</div>
+			<ul class="footerBtn footerLiBtn">
+				<li class="l twoLines">
+					  <button type="button" class="i18n button mui-btn mui-btn-block returnConfirm confirm" message="i18n_harvest_confirm"></button>
+				</li>
+				<li class="l twoLines">
+					  <button type="button" class="i18n button mui-btn mui-btn-block returnCancel returnNext next" message="i18n_com_cancel"></button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="modelToast" id="modelToast">
+		<img class="l" src="img/tip.png"/>
+		<span class="l"></span>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/startReview.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

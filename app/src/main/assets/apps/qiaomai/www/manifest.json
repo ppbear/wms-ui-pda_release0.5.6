@@ -1,0 +1,1744 @@
+{
+	"id": "qiaomai",
+	"name": "巧脉WMS",
+	"version": {
+		"name": "1.9.1",
+		"code": "10901"
+	},
+	"description": "巧脉仓储管理系统",
+	"icons": {
+		"144": "icon.png"
+	},
+	"launch_path": "index.html",
+	"developer": {
+		"name": "",
+		"email": "",
+		"url": ""
+	},
+	"orientation": [
+		"portrait"
+	],
+	"permissions": {
+
+		"Cache": {
+			"description": "缓存管理"
+		},
+
+		"Console": {
+			"description": "调试输出日志"
+		},
+
+		"Events": {
+			"description": "扩展事件"
+		},
+		"Zip": {},
+		"Maps": {},
+		"Push": {},
+		"File": {},
+		"Audio": {},
+		"Share": {},
+		"OAuth": {},
+		"Speech": {},
+		"Camera": {},
+		"Device": {},
+		"Runtime": {},
+		"Payment": {},
+		"Gallery": {},
+		"Storage": {},
+		"Webview": {},
+		"Barcode": {},
+		"Uploader": {},
+		"NativeUI": {},
+		"Contacts": {},
+		"Proximity": {},
+		"Navigator": {},
+		"Statistic": {},
+		"NativeObj": {},
+		"Messaging": {},
+		"Invocation": {},
+		"Downloader": {},
+		"Orientation": {},
+		"Geolocation": {},
+		"Accelerometer": {},
+		"XMLHttpRequest": {},
+		"pda": {
+			"description": "pda升级"
+		}
+	},
+	"plus": {
+		"distribute": {
+			"google": {
+				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
+			}
+		},
+		"splashscreen": {
+			"autoclose": false,
+			"waiting": true
+		},
+		"popGesture": "close",
+		"runmode": "liberate",
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw=="
+	},
+	"dependencies": {
+		"pages": {
+			"accelerometer": {
+				"href": "plus/accelerometer.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"accelerometer_shake",
+					"doc/accelerometer",
+					"doc/accelerometer"
+				],
+				"priority": 2
+			},
+			"doc/accelerometer": {
+				"href": "doc/accelerometer.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 2
+			},
+			"accelerometer_shake": {
+				"href": "plus/accelerometer_shake.html",
+				"resources": [
+					"img/shakeup.png",
+					"img/shakedown.png",
+					"audio/shake.wav",
+					"img/shake/1.jpg",
+					"img/shake/2.jpg",
+					"img/shake/3.jpg",
+					"img/shake/4.jpg"
+				],
+				"priority": 1
+			},
+			"audio": {
+				"href": "plus/audio.html",
+				"resources": [
+					"js/common.js",
+					"img/arecord.png",
+					"img/astop.png",
+					"audio/friendship.mp3"
+				],
+				"refer": [
+					"doc/audio"
+				],
+				"priority": 1
+			},
+			"doc/audio": {
+				"href": "doc/audio.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"barcode": {
+				"href": "plus/barcode.html",
+				"resources": [
+					"js/common.js",
+					"img/barcode.png"
+				],
+				"refer": [
+					"barcode_scan",
+					"doc/barcode"
+				],
+				"priority": 1
+			},
+			"barcode_scan": {
+				"href": "plus/barcode_scan.html",
+				"resources": [],
+				"priority": 1
+			},
+			"doc/barcode": {
+				"href": "doc/barcode.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"camera": {
+				"href": "plus/camera.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"camera_image",
+					"camera_video",
+					"doc/camera"
+				],
+				"priority": 1
+			},
+			"camera_image": {
+				"href": "plus/camera_image.html",
+				"priority": 1
+			},
+			"camera_video": {
+				"href": "plus/camera_video.html",
+				"priority": 1
+			},
+			"doc/camera": {
+				"href": "doc/camera.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"device": {
+				"href": "plus/device.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/device"
+				],
+				"priority": 1
+			},
+			"doc/device": {
+				"href": "doc/device.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"downloader": {
+				"href": "plus/downloader.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/downloader"
+				],
+				"priority": 1
+			},
+			"doc/downloader": {
+				"href": "doc/downloader.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"events": {
+				"href": "plus/events.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/events"
+				],
+				"priority": 1
+			},
+			"doc/events": {
+				"href": "doc/events.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"file": {
+				"href": "plus/file.html",
+				"resources": [
+					"js/common.js",
+					"img/fdir.png",
+					"img/fdisk.png",
+					"img/ffile.png",
+					"img/fup.png"
+				],
+				"refer": [
+					"doc/file"
+				],
+				"priority": 1
+			},
+			"doc/file": {
+				"href": "doc/io.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"gallery": {
+				"href": "plus/gallery.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/gallery"
+				],
+				"priority": 1
+			},
+			"doc/gallery": {
+				"href": "doc/gallery.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"geolocation": {
+				"href": "plus/geolocation.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/geolocation"
+				],
+				"priority": 1
+			},
+			"doc/geolocation": {
+				"href": "doc/geolocation.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"maps": {
+				"href": "plus/maps.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"maps_map",
+					"doc/maps"
+				],
+				"priority": 1
+			},
+			"maps_map": {
+				"href": "plus/maps_map.html",
+				"resources": [],
+				"refer": [
+					"maps_map_sub"
+				],
+				"priority": 1
+			},
+			"maps_map_sub": {
+				"href": "plus/maps_map_sub.html",
+				"resources": [],
+				"priority": 1
+			},
+			"doc/maps": {
+				"href": "doc/maps.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"message": {
+				"href": "plus/message.html",
+				"resources": [
+					"js/common.js",
+					"img/helloh5.jpg"
+				],
+				"refer": [
+					"doc/message"
+				],
+				"priority": 1
+			},
+			"doc/message": {
+				"href": "doc/messaging.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"nativeui": {
+				"href": "plus/nativeui.html",
+				"resources": [
+					"js/common.js",
+					"img/waiting.png",
+					"plus/nativeui_waiting.html"
+				],
+				"refer": [
+					"doc/nativeui"
+				],
+				"priority": 1
+			},
+			"doc/nativeui": {
+				"href": "doc/nativeUI.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"navigator": {
+				"href": "plus/navigator.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"navigator_status",
+					"doc/navigator"
+				],
+				"priority": 1
+			},
+			"doc/navigator": {
+				"href": "doc/navigator.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"navigator_status": {
+				"href": "plus/navigator_status.html",
+				"resources": [],
+				"priority": 1
+			},
+			"oauth": {
+				"href": "plus/oauth.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/oauth"
+				],
+				"priority": 1
+			},
+			"doc/oauth": {
+				"href": "doc/oauth.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"orientation": {
+				"href": "plus/orientation.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"orientation_level",
+					"orientation_compass",
+					"doc/orientation"
+				],
+				"priority": 1
+			},
+			"doc/orientation": {
+				"href": "doc/orientation.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"orientation_level": {
+				"href": "plus/orientation_level.html",
+				"resources": [
+					"img/orientationbg.png",
+					"img/orientationl.png",
+					"img/orientationb.png"
+				],
+				"priority": 1
+			},
+			"orientation_compass": {
+				"href": "plus/orientation_compass.html",
+				"resources": [
+					"img/orientationbg.png",
+					"img/orientationc.png",
+					"img/orientationa.png"
+				],
+				"priority": 1
+			},
+			"payment": {
+				"href": "plus/payment.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/payment"
+				],
+				"priority": 1
+			},
+			"doc/payment": {
+				"href": "doc/payment.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"proximity": {
+				"href": "plus/proximity.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/proximity"
+				],
+				"priority": 1
+			},
+			"doc/proximity": {
+				"href": "doc/proximity.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"push": {
+				"href": "plus/push.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/push"
+				],
+				"priority": 1
+			},
+			"doc/push": {
+				"href": "doc/push.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"runtime": {
+				"href": "plus/runtime.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"runtime_launch",
+					"doc/runtime"
+				],
+				"priority": 1
+			},
+			"doc/runtime": {
+				"href": "doc/runtime.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"runtime_launch": {
+				"href": "plus/runtime_launch.html",
+				"resources": [],
+				"priority": 1
+			},
+			"share": {
+				"href": "plus/share.html",
+				"resources": [
+					"js/common.js",
+					"img/add.png",
+					"logo.png"
+				],
+				"refer": [
+					"doc/share"
+				],
+				"priority": 1
+			},
+			"doc/share": {
+				"href": "doc/share.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"speech": {
+				"href": "plus/speech.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/speech"
+				],
+				"priority": 1
+			},
+			"doc/speech": {
+				"href": "doc/speech.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"statistic": {
+				"href": "plus/statistic.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/statistic"
+				],
+				"priority": 1
+			},
+			"doc/statistic": {
+				"href": "doc/statistic.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"storage": {
+				"href": "plus/storage.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/storage"
+				],
+				"priority": 1
+			},
+			"doc/storage": {
+				"href": "doc/storage.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"uploader": {
+				"href": "plus/uploader.html",
+				"resources": [
+					"js/common.js",
+					"plus/uploader_ret.html"
+				],
+				"refer": [
+					"doc/uploader"
+				],
+				"priority": 1
+			},
+			"doc/uploader": {
+				"href": "doc/uploader.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"webview": {
+				"href": "plus/webview.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/webview",
+					"webview_animation",
+					"webview_embed",
+					"webview_float",
+					"webview_pullhead",
+					"webview_pullhead_custom",
+					"webview_mask"
+				],
+				"priority": 1
+			},
+			"doc/webview": {
+				"href": "doc/webview.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"webview_animation": {
+				"href": "plus/webview_animation.html",
+				"resources": [],
+				"refer": [
+					"webview_new"
+				],
+				"priority": 1
+			},
+			"webview_new": {
+				"href": "plus/webview_new.html",
+				"resources": [
+					"img/ui.png"
+				],
+				"priority": 1
+			},
+			"webview_embed": {
+				"href": "plus/webview_embed.html",
+				"resources": [],
+				"priority": 1
+			},
+			"webview_float": {
+				"href": "plus/webview_float.html",
+				"resources": [],
+				"priority": 1
+			},
+			"webview_pullhead": {
+				"href": "plus/webview_pullhead.html",
+				"resources": [],
+				"refer": [
+					"webview_pullrefresh"
+				],
+				"priority": 1
+			},
+			"webview_pullrefresh": {
+				"href": "plus/webview_pullrefresh.html",
+				"resources": [],
+				"priority": 1
+			},
+			"webview_pullhead_custom": {
+				"href": "plus/webview_pullhead_custom.html",
+				"resources": [],
+				"refer": [
+					"webview_pullrefresh_custom"
+				],
+				"priority": 1
+			},
+			"webview_pullrefresh_custom": {
+				"href": "plus/webview_pullrefresh_custom.html",
+				"resources": [
+					"img/pull_arrow.png",
+					"img/pull_fresh.png"
+				],
+				"priority": 1
+			},
+			"webview_mask": {
+				"href": "plus/webview_mask.html",
+				"resources": [
+					"js/common.js",
+					"plus/webview_mask_side.html"
+				],
+				"priority": 1
+			},
+			"xhr": {
+				"href": "plus/xhr.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/xhr"
+				],
+				"priority": 1
+			},
+			"doc/xhr": {
+				"href": "doc/xhr.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"zip": {
+				"href": "plus/zip.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/zip"
+				],
+				"priority": 1
+			},
+			"doc/zip": {
+				"href": "doc/zip.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"njs": {
+				"href": "plus/njs.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/njs",
+					"njs_android_shortcut",
+					"njs_efficient",
+					"njs_ios_gamecenter"
+				],
+				"priority": 1
+			},
+			"doc/njs": {
+				"href": "doc/native.js.html",
+				"resources": [
+					"doc/ios.html",
+					"doc/android.html",
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"njs_android_shortcut": {
+				"href": "plus/njs_android_shortcut.html",
+				"resources": [],
+				"priority": 3
+			},
+			"njs_efficient": {
+				"href": "plus/njs_efficient.html",
+				"resources": [],
+				"priority": 2
+			},
+			"njs_ios_gamecenter": {
+				"href": "plus/njs_ios_gamecenter.html",
+				"resources": [
+					"img/5.jpg"
+				],
+				"priority": 1
+			},
+			"about": {
+				"href": "about.html",
+				"resources": [
+					"img/h5p.jpg"
+				],
+				"priority": 1
+			},
+			"index.html": {
+				"href": "index.html",
+				"resources": [
+					"manifest.json",
+					"css/common.css",
+					"plus/doc.html",
+					"icon.png",
+					"js/update.js",
+					"js/shortcut.js",
+					"js/immersed.js",
+					"img/task.png",
+					"mui/css/mui.min.css",
+					"mui/js/mui.js",
+					"i18n/Messages_zh.properties",
+					"img/removalActive.png",
+					"img/review.png",
+					"img/putawayActive.png",
+					"favicon.ico",
+					"js/jquery-1.10.1.min.js",
+					"img/pickingActive.png",
+					"i18n/Messages_zh_CN.properties",
+					"img/harvestActive.png",
+					"i18n/Messages.properties",
+					"img/reviewActive.png",
+					"js/common.js",
+					"img/picking.png",
+					"img/taskActive.png",
+					"img/check.png",
+					"img/putaway.png",
+					"img/checkActive.png",
+					"img/removal.png",
+					"js/jquery.i18n.properties.min.js",
+					"img/harvest.png"
+				],
+				"refer": [
+					"accelerometer",
+					"audio",
+					"barcode",
+					"camera",
+					"device",
+					"downloader",
+					"events",
+					"file",
+					"gallery",
+					"geolocation",
+					"maps",
+					"message",
+					"nativeui",
+					"navigator",
+					"orientation",
+					"oauth",
+					"payment",
+					"proximity",
+					"push",
+					"runtime",
+					"share",
+					"speech",
+					"statistic",
+					"storage",
+					"uploader",
+					"webview",
+					"xhr",
+					"zip",
+					"njs",
+					"about",
+					"plus/audio.html",
+					"plus/storage.html",
+					"plus/downloader.html",
+					"plus/nativeui.html",
+					"plus/camera.html",
+					"login.html"
+				],
+				"priority": 0
+			},
+			"doc/xhr.html": {
+				"href": "doc/xhr.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_embed.html": {
+				"href": "plus/webview_embed.html",
+				"resources": [],
+				"priority": 1
+			},
+			"doc/messaging.html": {
+				"href": "doc/messaging.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/oauth.html": {
+				"href": "doc/oauth.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/proximity.html": {
+				"href": "doc/proximity.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_pullhead_custom.html": {
+				"href": "plus/webview_pullhead_custom.html",
+				"resources": [],
+				"refer": [
+					"webview_pullrefresh_custom"
+				],
+				"priority": 1
+			},
+			"doc/runtime.html": {
+				"href": "doc/runtime.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/uploader.html": {
+				"href": "doc/uploader.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/maps_map.html": {
+				"href": "plus/maps_map.html",
+				"resources": [],
+				"refer": [
+					"maps_map_sub"
+				],
+				"priority": 1
+			},
+			"plus/file.html": {
+				"href": "plus/file.html",
+				"resources": [
+					"js/common.js",
+					"img/fdir.png",
+					"img/fdisk.png",
+					"img/ffile.png",
+					"img/fup.png"
+				],
+				"refer": [
+					"doc/file"
+				],
+				"priority": 1
+			},
+			"plus/nativeui.html": {
+				"href": "plus/nativeui.html",
+				"resources": [
+					"js/common.js",
+					"img/waiting.png",
+					"plus/nativeui_waiting.html",
+					"css/common.css",
+					"js/immersed.js"
+				],
+				"refer": [
+					"doc/nativeui"
+				],
+				"priority": 1
+			},
+			"plus/webview_mask.html": {
+				"href": "plus/webview_mask.html",
+				"resources": [
+					"js/common.js",
+					"plus/webview_mask_side.html"
+				],
+				"priority": 1
+			},
+			"plus/orientation_level.html": {
+				"href": "plus/orientation_level.html",
+				"resources": [
+					"img/orientationbg.png",
+					"img/orientationl.png",
+					"img/orientationb.png"
+				],
+				"priority": 1
+			},
+			"doc/webview.html": {
+				"href": "doc/webview.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/orientation_compass.html": {
+				"href": "plus/orientation_compass.html",
+				"resources": [
+					"img/orientationbg.png",
+					"img/orientationc.png",
+					"img/orientationa.png"
+				],
+				"priority": 1
+			},
+			"doc/accelerometer.html": {
+				"href": "doc/accelerometer.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 2
+			},
+			"plus/orientation.html": {
+				"href": "plus/orientation.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"orientation_level",
+					"orientation_compass",
+					"doc/orientation"
+				],
+				"priority": 1
+			},
+			"plus/oauth.html": {
+				"href": "plus/oauth.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/oauth"
+				],
+				"priority": 1
+			},
+			"doc/statistic.html": {
+				"href": "doc/statistic.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/navigator_status.html": {
+				"href": "plus/navigator_status.html",
+				"resources": [],
+				"priority": 1
+			},
+			"plus/uploader.html": {
+				"href": "plus/uploader.html",
+				"resources": [
+					"js/common.js",
+					"plus/uploader_ret.html"
+				],
+				"refer": [
+					"doc/uploader"
+				],
+				"priority": 1
+			},
+			"plus/webview.html": {
+				"href": "plus/webview.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/webview",
+					"webview_animation",
+					"webview_embed",
+					"webview_float",
+					"webview_pullhead",
+					"webview_pullhead_custom",
+					"webview_mask"
+				],
+				"priority": 1
+			},
+			"plus/maps_map_sub.html": {
+				"href": "plus/maps_map_sub.html",
+				"resources": [],
+				"priority": 1
+			},
+			"plus/camera_image.html": {
+				"href": "plus/camera_image.html",
+				"priority": 1
+			},
+			"plus/barcode.html": {
+				"href": "plus/barcode.html",
+				"resources": [
+					"js/common.js",
+					"img/barcode.png"
+				],
+				"refer": [
+					"barcode_scan",
+					"doc/barcode"
+				],
+				"priority": 1
+			},
+			"doc/push.html": {
+				"href": "doc/push.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_new.html": {
+				"href": "plus/webview_new.html",
+				"resources": [
+					"img/ui.png"
+				],
+				"priority": 1
+			},
+			"plus/statistic.html": {
+				"href": "plus/statistic.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/statistic"
+				],
+				"priority": 1
+			},
+			"plus/proximity.html": {
+				"href": "plus/proximity.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/proximity"
+				],
+				"priority": 1
+			},
+			"plus/speech.html": {
+				"href": "plus/speech.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/speech"
+				],
+				"priority": 1
+			},
+			"doc/audio.html": {
+				"href": "doc/audio.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/events.html": {
+				"href": "doc/events.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/barcode_scan.html": {
+				"href": "plus/barcode_scan.html",
+				"resources": [],
+				"priority": 1
+			},
+			"doc/device.html": {
+				"href": "doc/device.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/camera.html": {
+				"href": "doc/camera.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/accelerometer.html": {
+				"href": "plus/accelerometer.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"accelerometer_shake",
+					"doc/accelerometer",
+					"doc/accelerometer"
+				],
+				"priority": 2
+			},
+			"doc/gallery.html": {
+				"href": "doc/gallery.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_animation.html": {
+				"href": "plus/webview_animation.html",
+				"resources": [],
+				"refer": [
+					"webview_new"
+				],
+				"priority": 1
+			},
+			"doc/orientation.html": {
+				"href": "doc/orientation.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/events.html": {
+				"href": "plus/events.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/events"
+				],
+				"priority": 1
+			},
+			"about.html": {
+				"href": "about.html",
+				"resources": [
+					"img/h5p.jpg"
+				],
+				"priority": 1
+			},
+			"doc/zip.html": {
+				"href": "doc/zip.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/camera_video.html": {
+				"href": "plus/camera_video.html",
+				"priority": 1
+			},
+			"plus/runtime.html": {
+				"href": "plus/runtime.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"runtime_launch",
+					"doc/runtime"
+				],
+				"priority": 1
+			},
+			"plus/njs_efficient.html": {
+				"href": "plus/njs_efficient.html",
+				"resources": [],
+				"priority": 2
+			},
+			"plus/push.html": {
+				"href": "plus/push.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/push"
+				],
+				"priority": 1
+			},
+			"plus/njs_ios_gamecenter.html": {
+				"href": "plus/njs_ios_gamecenter.html",
+				"resources": [
+					"img/5.jpg"
+				],
+				"priority": 1
+			},
+			"doc/downloader.html": {
+				"href": "doc/downloader.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/share.html": {
+				"href": "plus/share.html",
+				"resources": [
+					"js/common.js",
+					"img/add.png",
+					"logo.png"
+				],
+				"refer": [
+					"doc/share"
+				],
+				"priority": 1
+			},
+			"doc/geolocation.html": {
+				"href": "doc/geolocation.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/geolocation.html": {
+				"href": "plus/geolocation.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/geolocation"
+				],
+				"priority": 1
+			},
+			"plus/downloader.html": {
+				"href": "plus/downloader.html",
+				"resources": [
+					"js/common.js",
+					"css/common.css",
+					"js/immersed.js"
+				],
+				"refer": [
+					"doc/downloader"
+				],
+				"priority": 1
+			},
+			"doc/payment.html": {
+				"href": "doc/payment.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/njs.html": {
+				"href": "plus/njs.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/njs",
+					"njs_android_shortcut",
+					"njs_efficient",
+					"njs_ios_gamecenter"
+				],
+				"priority": 1
+			},
+			"plus/webview_pullrefresh_custom.html": {
+				"href": "plus/webview_pullrefresh_custom.html",
+				"resources": [
+					"img/pull_arrow.png",
+					"img/pull_fresh.png"
+				],
+				"priority": 1
+			},
+			"doc/speech.html": {
+				"href": "doc/speech.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/accelerometer_shake.html": {
+				"href": "plus/accelerometer_shake.html",
+				"resources": [
+					"img/shakeup.png",
+					"img/shakedown.png",
+					"audio/shake.wav",
+					"img/shake/1.jpg",
+					"img/shake/2.jpg",
+					"img/shake/3.jpg",
+					"img/shake/4.jpg"
+				],
+				"priority": 1
+			},
+			"plus/runtime_launch.html": {
+				"href": "plus/runtime_launch.html",
+				"resources": [],
+				"priority": 1
+			},
+			"plus/zip.html": {
+				"href": "plus/zip.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/zip"
+				],
+				"priority": 1
+			},
+			"plus/njs_android_shortcut.html": {
+				"href": "plus/njs_android_shortcut.html",
+				"resources": [],
+				"priority": 3
+			},
+			"plus/payment.html": {
+				"href": "plus/payment.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/payment"
+				],
+				"priority": 1
+			},
+			"plus/audio.html": {
+				"href": "plus/audio.html",
+				"resources": [
+					"js/common.js",
+					"img/arecord.png",
+					"img/astop.png",
+					"audio/friendship.mp3",
+					"css/common.css",
+					"js/immersed.js"
+				],
+				"refer": [
+					"doc/audio"
+				],
+				"priority": 1
+			},
+			"doc/share.html": {
+				"href": "doc/share.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/gallery.html": {
+				"href": "plus/gallery.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/gallery"
+				],
+				"priority": 1
+			},
+			"doc/barcode.html": {
+				"href": "doc/barcode.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/camera.html": {
+				"href": "plus/camera.html",
+				"resources": [
+					"js/common.js",
+					"css/common.css",
+					"js/immersed.js"
+				],
+				"refer": [
+					"camera_image",
+					"camera_video",
+					"doc/camera"
+				],
+				"priority": 1
+			},
+			"doc/native.js.html": {
+				"href": "doc/native.js.html",
+				"resources": [
+					"doc/ios.html",
+					"doc/android.html",
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_float.html": {
+				"href": "plus/webview_float.html",
+				"resources": [],
+				"priority": 1
+			},
+			"plus/message.html": {
+				"href": "plus/message.html",
+				"resources": [
+					"js/common.js",
+					"img/helloh5.jpg"
+				],
+				"refer": [
+					"doc/message"
+				],
+				"priority": 1
+			},
+			"doc/maps.html": {
+				"href": "doc/maps.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/navigator.html": {
+				"href": "doc/navigator.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/io.html": {
+				"href": "doc/io.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/webview_pullrefresh.html": {
+				"href": "plus/webview_pullrefresh.html",
+				"resources": [],
+				"priority": 1
+			},
+			"plus/navigator.html": {
+				"href": "plus/navigator.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"navigator_status",
+					"doc/navigator"
+				],
+				"priority": 1
+			},
+			"plus/maps.html": {
+				"href": "plus/maps.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"maps_map",
+					"doc/maps"
+				],
+				"priority": 1
+			},
+			"plus/webview_pullhead.html": {
+				"href": "plus/webview_pullhead.html",
+				"resources": [],
+				"refer": [
+					"webview_pullrefresh"
+				],
+				"priority": 1
+			},
+			"plus/xhr.html": {
+				"href": "plus/xhr.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/xhr"
+				],
+				"priority": 1
+			},
+			"plus/device.html": {
+				"href": "plus/device.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/device"
+				],
+				"priority": 1
+			},
+			"doc/nativeUI.html": {
+				"href": "doc/nativeUI.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"doc/storage.html": {
+				"href": "doc/storage.html",
+				"resources": [
+					"doc/res/doc.js",
+					"doc/res/doc.css",
+					"doc/res/prettify.js",
+					"doc/res/prettify.sons.css"
+				],
+				"priority": 1
+			},
+			"plus/storage.html": {
+				"href": "plus/storage.html",
+				"resources": [
+					"js/common.js"
+				],
+				"refer": [
+					"doc/storage"
+				],
+				"priority": 1
+			},
+			"login.html": {
+				"resources": [
+					"img/loginBg.png",
+					"js/login.js",
+					"favicon.ico",
+					"i18n/Messages_zh_CN.properties",
+					"i18n/Messages.properties",
+					"js/common.js",
+					"css/common.css",
+					"mui/js/mui.js",
+					"mui/css/mui.min.css",
+					"i18n/Messages_zh.properties",
+					"js/jquery-1.10.1.min.js",
+					"js/jquery.i18n.properties.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"plus/barcode_scan2.html",
+				"plus/webview_pulltorefresh.html",
+				"plus/payment_iap.html",
+				"doc/ui.html",
+				"js/update.json",
+				"doc/contacts.html",
+				"doc/interface-orientation.html",
+				"doc/cache.html",
+				"sa@2x.png",
+				"doc/console.html",
+				"sa@3x.png",
+				"doc/splashscreen.html",
+				"plus/nativeobj_animation.html",
+				"plus/nativeobj.html",
+				"doc/nativeobj.html",
+				"img/qr.png",
+				"doc/key.html",
+				"sa.png"
+			]
+		}
+	}
+}

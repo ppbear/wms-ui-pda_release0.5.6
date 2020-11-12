@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_putaway">上架</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.picker.min.css"/>
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .inputBox{
+			margin-top:4px;
+		}
+		.change_location{
+			margin-top: 1px;
+			height: 40px;
+		}
+		.headerNav li.active{
+			background: #CCCCCC;
+		}
+		.footerBtn{
+			margin-top: 0;
+		}
+		.footerBtn .button{
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="title"></span>
+	</div>
+	<div id="content">
+		<ul class="headerNav">
+			<li class="l">
+				<div>
+					<span class="waitReceive harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_putaway_count_pre"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div>
+					<span class="receivePartCount harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_putaway_count_part"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div class="receivedKind">
+					<span class="completeReceive harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_putaway_count_all"></span>
+				</div>
+			</li>
+		</ul>
+		<div class="harvestInfo">
+			<div class="i18n noInfo gray"></div>
+			<ul class="forReceiveDetails"></ul>
+			<ul class="receivePartDetails"></ul>
+			<ul class="receiveAllDetails"></ul>
+		</div>
+		<div class="contentInfo">
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_harvest_goods_code"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row barcode l">
+					 <input type="text" id = "barcode"  class="clearfloat i18n-input " message="i18n_harvest_please_scan_the_container_number">
+				</div>
+				<div class="l inputBoxUnit">
+					<img class="testImg" src="img/tip.png"/>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_harvest_goods_name"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row goodsName l">
+		<!--			 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly" message="i18n_harvest_please_scan_the_container_number">-->
+				<select class="select" id ="goodsName" ></select>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_com_standard"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row standard l">
+					 <input type="text" readonly="readonly" class="clearfloat i18n-input aa readonly">
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_harvest_date_in_produced"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row l mui-content produced">
+					<select class="select" id ="producedate" ></select>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_putaway_location_code"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row  l">
+					 <input type="text" id="storageLocationCode" class="clearfloat i18n-input " message="i18n_putaway_please_commodity_location_code">
+				</div>
+				<div class="l inputBoxUnit">
+					<button type="button"  class="mui-btn mui-btn-primary change_location i18n"  message="i18n_putaway_change"  ></button>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_putaway_count_pre"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row  l">
+					 <input type="text" id="preCount"  readonly="readonly" class="mui-input-clear readonly clearfloat i18n-input">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text" class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_putaway_count_haved"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row   l">
+					 <input type="text" id="havPutCount" readonly="readonly" class="mui-input-clear readonly clearfloat i18n-input">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_putaway_count_put"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row  l">
+					 <input type="tel"  onkeyup="this.value=this.value.replace(/[^0-9]+/,'');" id="putCount" class="mui-input-clear clearfloat i18n-input">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<ul class="footerBtn">
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block confirm" message="i18n_com_confirm"></button>
+				</li>
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block next" message="i18n_com_next"></button>
+				</li>
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block end" message="i18n_com_end"></button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="mui/js/mui.picker.min.js" ></script>
+	<script type="text/javascript" src="js/startPutaway.js" ></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

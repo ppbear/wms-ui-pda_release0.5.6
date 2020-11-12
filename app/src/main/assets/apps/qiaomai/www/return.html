@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_review_return">退回</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .headerNav li{
+			width: 100%;
+			height: 35px;
+			line-height: 35px;
+		}
+		#content .inputBox{
+			margin-top: 10px;
+		}
+		#content .headerNav li:first-child{
+			border-bottom: none;
+		}
+		#content .headerNav li span.orderNum, #content .headerNav li div:first-child{
+			color: #3C3C3C;
+		}
+		#content .headerNav li .pickeKind{
+			color: #FF7373;
+		}
+		#content .headerNav li.picking div{
+			width: 50%;
+			height: 35px;
+			line-height: 35px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="i18n title" message="i18n_review_return"></span>
+	</div>
+	<div id="content">
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_picking_location_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row locationCode l">
+				 <input type="text" class="clearfloat inputCont i18n-input" message="i18n_return_please_commodity_bar_code_or_location_code">
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg locationImg" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_goods_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row barcode l">
+				 <input type="text" class="clearfloat inputCont i18n-input" message="i18n_return_please_commodity_bar_code_or_location_code">
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg barcodeImg" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_goods_name"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row goodsName name l">
+				 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_date_in_produced"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row goodsName productDate l">
+				 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_return_wait_for_return"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row handleGoodsNum l">
+				 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_returned"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row hasHandleNum l">
+				 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_review_return"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row  returnNum l">
+				 <input type="tel" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]+/,'');"  class="mui-input-clear clearfloat i18n-input">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<ul class="footerBtn">
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block confirm" message="i18n_harvest_confirm"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block next" style="visibility: hidden;" message="i18n_harvest_next"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block back end" message="i18n_com_back"></button>
+			</li>
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/return.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

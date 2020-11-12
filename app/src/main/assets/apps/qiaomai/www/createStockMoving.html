@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_task_move_order_num">移库</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .headerNav li{
+			width: 100%;
+			height: 35px;
+			line-height: 35px;
+		}
+		#content .inputBox{
+			margin-top: 10px;
+		}
+		#content .headerNav li:first-child{
+			border-bottom: none;
+		}
+		#content .headerNav li span.orderNum, #content .headerNav li div:first-child{
+			color: #3C3C3C;
+		}
+		#content .headerNav li .pickeKind{
+			color: #FF7373;
+		}
+		#content .headerNav li.picking div{
+			width: 50%;
+			height: 35px;
+			line-height: 35px;
+			text-align: center;
+		}
+		#content .inputBox #goodsUnit{
+			width: 100%;
+		    margin-left: 0px;
+		    text-indent: 0;
+		}
+		#content .inputBox input.active{
+			border: 1px solid red !important;
+		}
+		.footerBtn{
+			margin-top: 0px;
+		}
+		
+		.myButton{
+			border-radius: 3px;
+		    color: #fff;
+		    background: #0099FF;
+		    text-align:center;
+		    height: 40px;
+		    width: 50px;
+		    font-size: 15px;
+		    border: 0px;
+		}
+		.myBordBlueButton{
+			border-radius: 3px;
+		    color: #0099FF;
+		    text-align:center;
+		    height: 40px;
+		    width: 50px;
+		    font-size: 15px;
+		    border: 1px solid #0099FF;
+		}
+		.myBordRedButton{
+			border-radius: 3px;
+		    color: red;
+		    text-align:center;
+		    height: 40px;
+		    width: 50px;
+		    font-size: 15px;
+		    border: 1px solid red;
+		}
+		.select{
+			height: 40px;
+    		margin-top: 0px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="i18n title" message="i18n_index_picking"></span>
+	</div>
+	<div id="content">
+		<!--库位号-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_task_source_location"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row locationCode l">
+				 <input type="text" class="clearfloat i18n-input" id="sourceLocationCode" maxlength="20" placeholder="请扫描库位号"/>
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg sourceLocationImg" src="img/tip.png" />
+			</div>
+		</div>
+		<!--条形码-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_goods_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row barcode l">
+				 <input type="tel" class="clearfloat i18n-input" id="barcode" maxlength="20" placeholder="请核对条形码" />
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg barcodeImg" src="img/tip.png"/>
+			</div>
+		</div>
+		<!--商品名称-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_task_stockMove_goods"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row goodsName name l">
+				<select id ="goodsName" class="select input" ></select>
+			</div>
+		</div>
+		<!--生产日期-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_date_in_produced"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row  productDate l">
+				 <select id ="productDate" class="select input" ></select>
+			</div>
+		</div>
+		<!--库位库存-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_task_stockMove_stock_quantity"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row receiveCount handleGoodsNum l">
+				 <input type="text" readonly="readonly" id="stockQuantity"  realvalue="0" class="clearfloat i18n-input readonly" />
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit" />
+			</div>
+		</div>
+		<!--已拣-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_task_stockMove_have_pick_quantity"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row receiveCount hasHandleNum l">
+				 <input type="text"  readonly="readonly"  realvalue="0" id="havePickQuantity" class="clearfloat i18n-input readonly" />
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text"  readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"   />
+			</div>
+		</div>
+		<!--拣货-->
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_task_stockMove_pick_quantity"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row  returnNum l">
+				 <input type="tel"  class="mui-input-clear clearfloat i18n-input showKeyWord unit" id="pickQuantity" realvalue="0" maxlength="6" onkeyup="this.value=this.value.replace(/[^0-9.]+/,'');"  />
+			</div>
+			<div class="l inputBoxUnit">
+				<select id ="goodsUnit" class="select input" ></select>
+			</div>
+		</div>
+		
+		
+		<ul class="footerBtn">
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block btnPick myButton" message="i18n_task_stockMove_btn_pick"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block next myBordBlueButton"  message="i18n_task_stockMove_btn_next_loaction"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block btnPlacement myBordBlueButton" message="i18n_task_stockMove_btn_go_placement"></button>
+			</li>
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/createStockMoving.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

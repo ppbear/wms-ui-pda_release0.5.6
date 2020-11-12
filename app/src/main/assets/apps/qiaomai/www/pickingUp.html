@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_picking_is_picking">拣货中</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#header .title{
+			margin-left: -31px;
+		}
+		#content .headerNav li{
+			width: 100%;
+			background: #FFFFFF;
+		}
+		#content .inputBox{
+			margin-top:8px;
+		}
+		#content .headerNav li:first-child{
+			border-bottom: none;
+		}
+		#content .headerNav li div:first-child{
+			color: #3C3C3C;
+		}
+		#content .headerNav li .pickeKind{
+			color: #FF7373;
+		}
+		#content .headerNav li.picking div{
+			width: 50%;
+			height: 48px;
+			line-height: 48px;
+			text-align: center;
+		    border-bottom: 1px solid #D5D5D5
+		}
+		#content ul{
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="orderNum title" id="orderNumber"></span>
+	</div>
+	<div id="content">
+		<ul class="headerNav">
+			<li class="picking">
+				<div class="l"> 
+					<span class="i18n" message="i18n_picking_to_be_picke_code"></span>
+					<span class="pickeKind"  id="waitPickCounts"></span>
+					<span class="pickeKind i18n" message="i18n_com_one"></span>
+				</div>
+				<div class="r">
+					<span class="i18n" message="i18n_picking_completed_code"></span>
+					<span class="receivedKind"  id="havePickCounts"></span>
+					<span class="receivedKind i18n" message="i18n_com_one"></span>
+				</div>
+			</li>
+		</ul>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_picking_location_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row  locationCode l">
+				 <input type="text"  id="locationCode" placeholder="" class="clearfloat " >
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg locationCodeTip" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_goods_code"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row goodsBarcode l">
+				 <input type="text" id="barcode" class="clearfloat ">
+			</div>
+			<div class="l inputBoxUnit">
+				<img class="testImg barcodeTip" src="img/tip.png"/>
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_harvest_goods_name"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row purchaseAmount l goodsName">
+				 <input type="text" readonly="readonly" disabled="disabled" id ="goodName"  class="clearfloat readonly">
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_com_standard">规格</span>
+			</div>
+			<div class="inputBoxContent mui-input-row standard l">
+				 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_picking_target"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row receiveCount l">
+				 <input type="text" readonly="readonly" disabled="disabled" id ="prePickNum" class="clearfloat i18n-input readonly">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" disabled="disabled" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="i18n" message="i18n_picking_picked_num"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row receiveCount l">
+				 <input type="text" readonly="readonly" disabled="disabled" id ="havPickNum" class="clearfloat i18n-input readonly">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text" readonly="readonly" disabled="disabled" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<div class="inputBox">
+			<div class="inputBoxName l">
+				<span class="red">*</span><span class="i18n" message="i18n_index_picking"></span>
+			</div>
+			<div class="inputBoxContent mui-input-row  receiveNum l">
+				 <input type="tel" onkeyup="this.value=this.value.replace(/[^0-9]+/,'');" id="receiveNum" class="mui-input-clear clearfloat i18n-input">
+			</div>
+			<div class="l inputBoxUnit">
+				<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+			</div>
+		</div>
+		<ul class="footerBtn">
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block confirm" message="i18n_harvest_confirm"></button>
+			</li>
+			<li class="l">
+				  <button type="button" class="i18n button mui-btn mui-btn-block next" message="i18n_harvest_next"></button>
+			</li>
+			<li class="l">
+				 <button id="end" type="button" class="i18n button mui-btn mui-btn-block end" message="i18n_harvest_end"></button>
+			</li>
+		</ul>
+	</div>
+	<!--结束菜单-->
+	<div id="maskModal">
+	  <ul class="maskModalInfo">
+	    <li class="first endPut i18n" message="i18n_picking_end_all"></li>
+	    <li class="startPut i18n" message="i18n_picking_put_to_catch_storage"></li>
+	  </ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/startPick.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

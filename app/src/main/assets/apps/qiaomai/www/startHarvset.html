@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_harvest">找货</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="mui/css/mui.picker.min.css"/>
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/startTask_template.css"/>
+	<style type="text/css">
+		#content .inputBox{
+			margin-top:10px ;
+		}
+		.headerNav li.active{
+			background: #CCCCCC;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span class="mui-icon mui-icon-back mui-action-back l"></span>
+		<span class="i18n title"></span>
+	</div>
+	<div id="content">
+		<ul class="headerNav">
+			<li class="l">
+				<div>
+					<span class="waitReceive harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_harvest_wait_for_receiving"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div>
+					<span class="receivePartCount harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_harvest_receive_order_part_harvesting"></span>
+				</div>
+			</li>
+			<li class="l">
+				<div class="receivedKind">
+					<span class="completeReceive harvestNum"></span><span class="i18n" message="i18n_com_kind"><span>
+				</div>
+				<div> 
+					<span class="i18n" message="i18n_harvest_complete_the_harvest"></span>
+				</div>
+			</li>
+		</ul>
+		<div class="harvestInfo">
+			<div class="i18n noInfo gray"></div>
+			<ul class="forReceiveDetails"></ul>
+			<ul class="receivePartDetails"></ul>
+			<ul class="receiveAllDetails"></ul>
+		</div>
+		<div class="contentInfo">
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_goods_code"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row barcode l">
+					 <input type="tel" class="clearfloat i18n-input" id ="barcode"  maxlength="15"  message="i18n_harvest_please_scan_the_container_number">
+				</div>
+				<div class="l inputBoxUnit">
+					<img class="testImg" src="img/tip.png"/>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_goods_name"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row goodsName l">
+					<!-- <input type="text" readonly="readonly" class="clearfloat i18n-input readonly" message="i18n_harvest_please_scan_the_container_number">-->
+					 	<select id ="goodsName" class="select" ></select>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_com_standard"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row standard l">
+					 <input type="text" readonly="readonly" class="clearfloat i18n-input readonly">
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_purchase_amount"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row purchaseAmount l">
+					 <input type="text" readonly="readonly" id="goodsNum" class="clearfloat i18n-input readonly" message="i18n_harvest_please_scan_the_container_number">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="i18n" message="i18n_harvest_received_amount"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row receiveCount l">
+					 <input type="text" readonly="readonly" id="haveReciveCount" class="clearfloat i18n-input readonly">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text" readonly="readonly" class="clearfloat i18n-input readonly unit" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_harvest_date_in_produced"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row l mui-content produced">
+					<div id='result' class="ui-alert"></div>
+					<button id='produced'  class="btn mui-btn mui-btn-block i18n"></button>
+				</div>
+			</div>
+			<div class="inputBox">
+				<div class="inputBoxName l">
+					<span class="red">*</span><span class="i18n" message="i18n_harvest_the_quantity_of_goods_received_this_time"></span>
+				</div>
+				<div class="inputBoxContent mui-input-row mui-content receiveNum l">
+					 <input type="tel" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]+/,'');" class="aa mui-input-clear aa clearfloat i18n-input">
+				</div>
+				<div class="l inputBoxUnit">
+					<input  type="text"  class="clearfloat i18n-input readonly unit" readonly="readonly" message="i18n_harvest_goods_unit"  />
+				</div>
+			</div>
+			<ul class="footerBtn">
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block confirm" message="i18n_harvest_confirm"></button>
+				</li>
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block next" message="i18n_harvest_next"></button>
+				</li>
+				<li class="l">
+					  <button type="button" class="i18n button mui-btn mui-btn-block end" message="i18n_harvest_end"></button>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/qm.dateTimeUtil.js"></script>
+	<script type="text/javascript" src="mui/js/mui.picker.min.js" ></script>
+	<script type="text/javascript" src="js/startHarvset.js" ></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

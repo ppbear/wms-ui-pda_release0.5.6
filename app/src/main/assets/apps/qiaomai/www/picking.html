@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_index_picking">拣货</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		#refreshContainer{
+			top: 48px;
+			height: calc(100vh - 50px);
+		}
+		.button {
+		    border-radius: 5px;
+		    height: 22px;
+		    text-align: center;
+		    align-content: center;
+		    line-height: 11px;
+		}
+		.noActive{
+			background: #E8E8E8;
+			color: #525252;
+			border: 1px solid #525252;
+		}
+		#content .receievepick li button.return {
+		    margin-right: 0px;
+		}
+		.fontMax{
+			font-size: 18px;
+		}
+		#content .list li div span.rightContent {
+		    color: #111111;
+		}
+		.graySpan{
+			color: #737373;
+		}
+		#content ul {
+		    padding: 0px 0px;
+		}
+		#content ul div{
+		    padding: 0px 15px;
+		}
+		#content .list li div {
+		    padding-left: 4px;
+		    padding-right: 6px;
+		}
+		.firstDiv{
+			margin-top: 0px;
+		}
+		#content .list li {
+		    background: #fff; 
+		}
+		.blankDiv{
+			background: #F9f9f9;
+			margin-bottom: 0px;
+			height: 0.25rem;
+		}
+		#content .list li {
+		    margin-bottom: 0px;
+		}
+		.startBtn{
+			background:  #5838E9;
+			border:1px solid #0000E6 ;
+			color: #FFFFFF;
+		}
+		.backBtn{
+			border:1px solid red ;
+			color: red;
+		}
+		.getBtn{
+			border:1px solid #0000E6 ;
+			color: #0000E6;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<span class="mui-icon mui-icon-back mui-action-back l"></span>
+			<span class="i18n title" message="i18n_index_picking"></span>
+		</div>
+		<ul class="nav">
+			<li class="l active navPicking">
+				<span class="i18n" message="i18n_picking_to_be_picked"></span>
+				<em class="forPicking">(<span>0</span>)</em>
+			</li>
+			<li class="l navPicked">
+				<span class="i18n" message="i18n_picking_picked"></span>
+				<em class="picked">(<span>0</span>)</em>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<!--<div class="pickTitle mui-content mui-scroll-wrapper" >
+			<div class="l">
+				<span class="i18n waitCount" message="i18n_picking_no_task_can_be_received"></span><span class="i18n continueRe" message="i18n_picking_continue_receive"></span>
+			</div>
+			<div class="r">
+				<button type="button" disabled class="i18n mui-btn r" message="i18n_picking_receive"></button>
+			</div>
+		</div>-->
+		<div id="refreshContainer">
+			<div class="mui-scroll">
+				<ul class="pickingList waitPickList list receievepick mui-table-view-chevron" id="goodsList">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/picking.js"></script>
+	<script type="text/javascript" src="js/qm.dateTimeUtil.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

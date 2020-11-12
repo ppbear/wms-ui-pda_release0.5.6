@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_task_stock_movement">库存移动</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		body{
+			background: #F9F9F9;
+		}
+		#header{
+			height: 48px;
+		}
+		#content .list li{
+			background: #FFFFFF;
+		}
+		#content .list{
+			padding: 0;
+		}
+		#content{
+			padding: 48px 0rem 0px 0rem;
+		} 
+		#header ul.nav li{
+			width: 100%;
+		}
+		.pic{
+			width: 64%;
+		    height: 63%;
+		    margin-top: 9px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<span class="mui-icon mui-icon-back mui-action-back l"></span>
+			<span class="i18n title" message="i18n_task_stock_movement"></span>
+			<div id="createStockMove"  disabled class="i18n r " ><img class="pic" src="img/add.png"></div>
+		</div>
+	</div>
+	<div id="content">
+		<div class="pickTitle">
+			<div class="l">
+				<span class="i18n waitCount" message="i18n_picking_no_task_can_be_received"></span><span class="i18n continueRe" message="i18n_picking_continue_receive"></span>
+			</div>
+			<div class="r">
+				<button type="button" disabled class="i18n mui-btn r" message="i18n_picking_receive"></button>
+			</div>
+			
+		</div>
+		<ul class="stockMoveList list receievepick">
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/stockMove.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"  content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_com_inquire">查询</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		#header ul li:first-child{
+			border: none;
+		}
+		#content{
+		    padding: 96px 1rem 0px 1rem;
+		}
+		#content div{
+			margin-top: 6rem;
+		}
+		#content button{
+			margin-top: 9rem;
+			background: #0013E7;
+			color: #FFFFFF;
+		}
+		#content input.active{
+			border: 1px solid #0013E7;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<span class="mui-icon mui-icon-back mui-action-back l"></span>
+			<span class="i18n title" message="i18n_com_inquire"></span>
+		</div>
+		<ul class="nav">
+			<li class="l active navPicking" data-pda="goods">
+				<span class="i18n" message="i18n_inquire_goods"></span>
+			</li>
+			<li class="l navPicked" data-pda="location">
+				<span class="i18n" message="i18n_inquire_location"></span>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div class="mui-input-row">
+	        <input type="text" class="mui-input-clear searchName  i18n-input" message="i18n_inquire_goods_condition">
+	    </div>
+	    <button type="button" id="searchBtn" class="i18n  button harvest mui-btn mui-btn-block" message="i18n_com_inquire">查询</button>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/inquire.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

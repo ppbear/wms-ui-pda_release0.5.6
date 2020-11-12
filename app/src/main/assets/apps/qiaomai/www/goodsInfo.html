@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_com_goods_info">商品详情</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		#content .list li div{
+			height: auto;
+		}
+		#header{
+			height: 48px;
+		}
+		#content{
+			padding-top: 48px;
+		}
+		.goodsTile{
+			position: fixed;
+			height: 6rem;
+			width: 100%;
+			background: url(img/goodsInfo.png) no-repeat center;
+		}
+		.goodsTop{
+			position: relative;
+			left: 5%;
+			top:10%;
+			height: 90%;
+			width: 90%;
+			background: url(img/goodsTop.png) no-repeat center;
+			background-size: 100%;
+			border-bottom: 1px dashed #3C3C3C;
+		}
+		#content .list li div.goods{
+			height: 2rem;
+			line-height: 1rem;
+			font-size: 0.8rem;
+		}
+		.goodsName{
+			font-weight: 600;
+		}
+		.goodsUnit{
+			margin-right: 6px;
+			margin-left: 8px;
+		}
+		#content .list li{
+			padding:0 20px;
+			background: none;
+			font-size: 14px;
+		}
+		#content .list li div{
+			height: 1.1rem;
+			overflow: hidden;
+		}
+		#content .list li span.leftTitle, .goodsBottom p span.change{
+			color: #9E9E9E;
+			font-size: 0.8rem;
+		}
+		#content .list li div span.rightContent{
+			color: #3C3C3C;
+			font-size: 0.8rem;
+		}
+		.goodsCont{
+			height: calc(100% - 6rem);
+			overflow: scroll;
+		}
+		.goodsBottom{
+			padding: 10px 0;
+			height: 4rem;
+			margin-left: 5%;
+			width: 90%;
+			background: url(img/goodsBottom.png) no-repeat center;
+			background-size: 100%;
+			margin-top: 6rem;
+		}
+		.goodsBottom div{
+			width: 50%;
+		}
+		.goodsBottom p{
+			text-align: center;
+			line-height: 1.4rem;
+			font-size: 0.8rem;
+		}
+		.goodsBottom div.l{
+			height: 100%;
+			border-right: 1px solid #CCCCCC;
+		}
+		.goodsBottom p span.active{
+			font-weight: 600;
+			font-size: 18px;
+		}
+		.locationList{
+			margin-top: 20px;
+		}
+		.locationList ul li{
+			padding:10px 10px;
+			overflow: hidden;
+			border-bottom: 1px solid #F9F9F9;
+		}
+		.locationList ul li div{
+			width: 33.3333%;
+			line-height: 1.2rem;
+		}
+		.goodsNum{
+			color: #FF6464;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<span class="mui-icon mui-icon-back mui-action-back l"></span>
+			<span class="i18n title" message="i18n_com_goods_info"></span>
+		</div>
+	</div>
+	<div class="noData">
+		<span class="i18n" message="i18n_inquire_not_find"></span>
+	</div>
+	<div id="content">
+		<div class="goodsTile">
+			<div class="goodsTop">
+				<ul class="goodsList list">
+					<li>
+					  	<div class='goods'>
+							  <span class='goodsName'></span>&nbsp;	
+						  </div>	
+						<div>
+							<span class='leftTitle i18n' message="i18n_com_standard"></span>&nbsp;
+							<span class="rightContent goodsStandard"></span>
+							<span class="r goodsUnit"></span>
+							<span class="r leftTitle i18n" message="i18n_com_unit"></span>
+						</div>
+						<div>
+							<span class='leftTitle i18n' message="i18n_harvest_goods_code"></span>&nbsp;
+							<span class='rightContent goodsBarcode'></span>	
+						</div>
+						<div>
+							<span class='leftTitle i18n' message="i18n_com_sku"></span>&nbsp;&nbsp;
+							<span class='rightContent goodsSku'></span>	
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="goodsCont">
+			<div class="goodsBottom">
+				<div class="l">
+					<p class="locationNum"></p>
+					<p class="i18n" message="i18n_inquire_occupies_the_location"></p>
+				</div>
+				<div class="r">
+					<p class="goodsNum"></p>
+					<p class="unitList">
+					</p>
+				</div>
+			</div>
+			<div class="locationList">
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/goodsInfo.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>
+

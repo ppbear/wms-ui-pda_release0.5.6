@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title class="i18n" message="i18n_review_return_or_replenishment">退货或补货</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link href="mui/css/mui.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/taskTransit_template.css"/>
+	<style type="text/css">
+		#content .list li .button{
+			margin-top: 26px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="top">
+			<span class="mui-icon mui-icon-back mui-action-back l"></span>
+			<span class="i18n title" message="i18n_review_return_or_replenishment"></span>
+		</div>
+		<ul class="nav">
+			<li class="l active navPicking">
+				<span class="i18n" message="i18n_review_wait_for_return"></span>
+				<em class="forPicking">(<span></span>)</em>
+			</li>
+			<li class="l navPicked">
+				<span class="i18n" message="i18n_review_wait_for_replenishment"></span>
+				<em class="picked">(<span></span>)</em>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<ul class="pickingList list returnList">
+		</ul>
+		<ul class="pickedList list repicksList">
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript" src="mui/js/mui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/returnOrReplenishment.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title class="i18n" message="i18n_com_login">登录页面</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link type="text/css" href="mui/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<style type="text/css">
+		html {
+			background: none;
+		}
+		html,
+		body {
+			height: 100%;
+			overflow: auto;
+		}
+		body {
+			background-size: contain;
+		}
+		.logo{
+			height: 10%;
+			margin-top: 20%;
+		}
+		.logo img {
+			left: auto;
+			margin:0 auto;
+		}
+		#wrap {
+			padding-top: 8rem;
+			width: 100%;
+		}
+		#wrap form{
+			width: 80%;
+			margin: 0 auto;
+		}
+		#wrap .mui-input-row input {
+			width: 100%;
+			height: 2.4rem;
+			border-radius: 2.4rem;
+			text-indent: 1rem;
+		}
+		#wrap .mui-input-row input[type="text"] {
+			background-size: 0.8rem;
+			margin-bottom: 1.6rem;
+		}
+		#wrap .mui-input-row input[type="password"] {
+			background-size: 0.8rem;
+		}
+		#wrap .mui-input-row input[type="checkbox"] {
+			width: 3rem;
+			right: 7rem;
+			top: 0rem
+		}
+		.mui-input-row .mui-input-clear~.mui-icon-clear{
+			top: 14px;
+			right: 10px;
+		}
+		#wrap .mui-input-row label {
+			color: #3C3C3C;
+			width: 5rem;
+			padding: 0;
+			margin: 0;
+			margin-left: 12rem;
+		}
+		#wrap .mind {
+			height: 2.5rem;
+			display: none;
+		}
+		#loginBtn {
+			width: 100%;
+			margin-top: 2.4rem;
+			background: #3A04DB;
+			color: white;
+		}
+		.footer{
+			height: 55px;
+			margin-top: 2.5rem;
+			background: url(img/loginFooterBg.png)  center no-repeat;
+		}
+
+		/*版本更新model*/
+		#versionModel, .contentModel{
+			height: 100%;
+			width: 100%;
+			background: rgba(0,0,0,0.2);
+			position: fixed;
+			top:0;
+			right: 0;
+			display: none;
+		}
+		#versionModel .versionContent{
+			margin: 0 auto;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -134px;
+			margin-left: -134px;
+			width: 268px;
+			height: 268px;
+			overflow: hidden;
+			background: url(./img/updateBg.png) no-repeat;
+			background-size: 100%;
+		}
+		#versionModel .versionContent .versionTitle{
+			margin-top: 94px;
+			margin-left: 50px;
+			font-weight: bolder;
+		}
+		#versionModel .versionContent .versionInfo{
+			margin-left: 50px;
+			height: 88px;
+			overflow: auto;
+		}
+		#versionModel .versionContent .footerBtn{
+			height: 40px;
+		}
+		#versionModel .versionContent .footerBtn ul li{
+			width: 50%;
+			height: 40px;
+			text-align: center;
+		}
+		#versionModel .versionContent .footerBtn ul li button{
+			width: 80%;
+			border-radius: 40px;
+			background: #FFFFFF;
+		}
+		#versionModel .versionContent .footerBtn ul li button.upgrade{
+			background: #0013E7;
+			color: #FFFFFF;
+		}
+		.red{
+			color: #ff7073;
+		}
+
+		.buttonV {
+			border: 1px solid #0013E7;
+			border-radius: 5px;
+			color: #0013E7;
+			width: 100%;
+			padding: 8px;
+		}
+		#versionModel .versionContent .footerBtn ul li button {
+			width: 80%;
+			border-radius: 40px;
+			background: #FFFFFF;
+		}
+		.l {
+			float: left;
+		}
+		#maskModal img{
+			position: absolute;
+			top: 51%;
+			left: 50%;
+			margin-left: -68px;
+		}
+		.loadingModal{
+		    height: 36%;
+			width: 70%;
+			border-radius: 10px;
+			margin-left: 15%;
+			margin-top: 50%;
+			background: url(img/loadingCar.gif) center 0rem no-repeat #FFFFFF;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<form action="" method="post">
+				<label></label>
+				<div class="mui-input-row userName">
+					<input type="text" placeholder="" message="i18n_login_please_enter_your_account_number" class="mui-input-clear name i18n-input" value="">
+				</div>
+				<label></label>
+				<div class="mui-input-row">
+					<input type="password" placeholder="" message="i18n_login_please_enter_password" class="mui-input-clear password checkbox i18n-input" value="">
+				</div>
+				<span id="warning" style="background-color:red;width:180px;"></span>
+				<div class="mui-input-row mui-checkbox mind">
+					<input id="remember" class="checkbox l" name="Checkbox" type="checkbox" checked="checked">
+					<label class="r">记住密码</label>
+				</div>
+				<div class="clearfloat"></div>
+				<button type="button" id="loginBtn" class="i18n button mui-btn mui-btn-block" message="i18n_com_login"></button>
+			</form>
+		</div>
+		<footer class="footer"></footer>
+
+		<div id="versionModel">
+			<div class="versionContent">
+				<div class="versionTitle i18n" message="i18n_com_new_version_features"></div>
+				<div class="versionInfo">
+				</div>
+				<div class="footerBtn">
+					<ul>
+						<li class="l">
+							<button class="buttonV i18n upgrade" message="i18n_com_upgrade"></button>
+						</li>
+						<li class="l">
+							<button class="buttonV i18n exit" message="i18n_com_exit_the_program"></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="maskModal">
+			<div class="loadingModal">
+				<img src="img/updateLoading.gif"/>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var isLogin=true;
+		</script>
+		<script type="text/javascript" src="mui/js/mui.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+		<script type="text/javascript" src="js/plugin.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.ready(function() {
+				/*设置bottom绝对位置*/
+				$("#footer").css("top", (document.body.scrollHeight - 48) + "px");
+			});
+		</script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</body>
+
+</html>

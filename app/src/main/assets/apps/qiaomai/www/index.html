@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title class="i18n" message="i18n_com_index">主页</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link href="mui/css/mui.min.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<script type="text/javascript" src="mui/js/mui.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.i18n.properties.min.js"></script>
+		<script type="text/javascript" src="js/plugin.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+		body{
+			background: #ececec;
+			padding-top: 5px;
+		}
+			#wrap{
+				overflow: initial;
+			}
+			.content{
+				height: 6.46rem;
+				overflow: hidden;
+				margin:0 5px;
+				background: #FFFFFF;
+				border-radius:5px ;
+				margin-bottom: 5px;
+			}
+			ul li{
+				padding-top: 1.8rem;
+				width: 33.3333%;
+				text-align: center;
+			}
+			ul li img{
+				margin: 0 auto;
+			}
+			ul li div{
+				height: 1.4rem;
+				line-height: 1.4rem;
+				font-size: 0.70rem;
+			}
+			ul li.active{
+				background: #CCCCCC;
+			}
+			#logout{
+				margin-left: 10%;
+				width: 80%;
+			}
+			#footer{
+				height: 6rem;
+				padding-top: 1.6rem;
+				width: calc(100% - 10px);
+			}
+			.version{
+				padding: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="content">
+			<li class="l simulationA" data-url = "harvest.html">
+				<img src="img/newHarvest.png"/>
+				<!--<img src="img/harvestActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_harvest"></span>
+				</div>
+			</li>
+			<li class="l simulationA" data-url = "putaway.html">
+				<img src="img/newPutaway.png"/>
+				<!--<img src="img/putawayActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_putaway"></span>
+				</div>
+			</li>
+		</ul>
+		<ul class="content">
+			<li class="l simulationA" data-url = "picking.html">
+				<img src="img/newPicking.png"/>
+				<!--<img src="img/pickingActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_picking"></span>
+				</div>
+			</li>
+			<li class="l simulationA" data-url = "review2.html">
+				<img src="img/newReview.png"/>
+				<!--<img src="img/reviewActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_review"></span>
+				</div>
+			</li>
+			<li class="l simulationA" data-url = "moveMain.html">
+				<img src="img/newRemoval.png"/>
+				<!--<img src="img/removalActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_removal"></span>
+				</div>
+			</li>
+		</ul>
+		<ul class="content">
+			<li class="l simulationA" data-url = "task.html">
+				<img src="img/newTask.png"/>
+				<!--<img src="img/taskActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_index_task"></span>
+				</div>
+			</li>
+			<!--<li class="l simulationA" data-url = "inventory.html">
+				<img src="img/check.png"/>
+				<img src="img/checkActive.png"/>
+				<div>
+					<span class="i18n" message="i18n_index_inventory"></span>
+				</div>
+			</li>-->
+			<li class="l simulationA" data-url = "inquire.html">
+				<img src="img/newInquire.png"/>
+				<!--<img src="img/inquireActive.png"/>-->
+				<div>
+					<span class="i18n" message="i18n_com_inquire"></span>
+				</div>
+			</li>
+		</ul>
+		<div id="footer" class="content">
+			<button type="button" id="logout" class="button i18n mui-btn mui-btn-block" message="i18n_login_logout"></button>
+			<p class="version"><span  class="i18n" message="i18n_index_varsion_code"></span>&nbsp;&nbsp;<span >v</span><span id="code"></span></p>
+		</div>
+
+
+		<script type="text/javascript">
+			qmpur.dobuleLoginOut();
+			/*判断是否登录*/
+			if(!window.localStorage.getItem("token")) {
+				mui.plusReady(function(){
+					plus.webview.currentWebview().loadURL("login.html");
+				});
+			};
+			$(".content li").on("tap", function(){
+				$(this).addClass("active").siblings("li").removeClass("active");
+			});
+
+			$("#logout").on("tap", function(){
+				/* 为签退，执行签退功能。 */
+				var btnArray = [i18n_com_confirm, i18n_com_cancel];
+				mui.confirm(i18n_com_confirm_logout, i18n_com_reminder, btnArray, function(e) {
+					if (e.index != 1) {
+						qmpur.logout();
+					}
+				});
+			});
+
+			$(function(){
+				$("#logout").css({"color" : "red",  "border": "1px solid  red"});
+				//获取版本
+				var curVersionName = window.localStorage.getItem("versionName");
+				$("#code").html(curVersionName);
+				
+			});
+		</script>
+	</body>
+
+</html>
